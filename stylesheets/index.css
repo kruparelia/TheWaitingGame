@@ -1,58 +1,52 @@
-<style type="text/css">
+
             a{
-                color:#FF0000;
-                text-decoration:none;
+                color:#FF0000 !important;
+                text-decoration:none !important;
             }
             a:hover{
-                text-decoration:underline;
+                text-decoration:underline !important;
             }
             body{
-                height:100%;
-                width:100%;
-                margin:10px;
-                padding-left:0px;
-                text-align:left;
+                height:100% !important;
+                width:100% !important;
+                margin:10px !important;
+                padding-left:0px !important;
+                text-align:left !important;
             }
             #puzzle_container{
-                line-height:500px;
-                text-align:center;
-                vertical-align:center;
-                border:10px outset #CCCCCC;
-                position:relative;
-                color: #FFFFFF;
-                background-color: #707070;
+                line-height:500px !important;
+                text-align:center !important;
+                vertical-align:center !important;
+                border:10px outset #CCCCCC !important;
+                position:relative !important;
+                color: #FFFFFF !important;
+                background-color: #707070 !important;
 
-                width: 200px;
-                height: 200px;
+                width: 200px !important;
+                height: 200px !important;
             }
 
             #puzzle_container .square{
-                overflow:hidden;
-                border-left:1px solid #FFF;
-                border-top:1px solid #FFF;
-                position:absolute;
+                overflow:hidden !important;
+                border-left:1px solid #FFF !important;
+                border-top:1px solid #FFF !important;
+                position:absolute !important;
             }
             #timeSize{
-                font-size: 38px;}
+                font-size: 38px; !important}
 
             .activeImageIndicator{
-                border:1px solid #FF0000;
-                position:absolute;
-                z-index:10000;
+                border:1px solid #FF0000 !important;
+                position:absolute !important;
+                z-index:10000 !important;
             }
             .revealedImage{
-                position:absolute;
-                left:0px;
-                opacity:0;
-                filter:alpha(opacity=50);
-                top:0px;
-                z-index:50000;
+                position:absolute !important;
+                left:0px !important;
+                opacity:0 !important;
+                filter:alpha(opacity=50) !important;
+                top:0px !important;
+                z-index:50000 !important;
             }
 
-            .ui-page {
-                background-color: white;
-            }
-            .ui-content{
-                background-color: white;
-            }
- </style>
+
