@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--        <link rel="stylesheet" href="stylesheets/index.css"/>-->
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css" />
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="cordova.js"></script>
+    </head>
+
+    <style type="text/css">
+        body {
+            background: url(images/glow_background.jpg);
+            background-repeat:repeat-y;
+            background-position:center center;
+            background-attachment:scroll;
+            background-size:100% 100%;
+        }
+        .ui-page {
+            background: transparent;
+        }
+        .ui-content{
+            background: transparent;
+        }
+
+         #mainButton{
+            position: relative;
+            top: 12em;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        #btnStyle{
+            background-color: purple;
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+    </style>
+
+    <body>
+
+        <div id="mainButton" data-role="controlgroup" data-type="vertical">
+            <a href="imageScramble/imageScramble.html" id="btnStyle" class="ui-btn ui-corner-al"> Image Scramble </a><br>
+            <a href="#" id="btnStyle" class="ui-btn ui-corner-al"> Pizza Delivery </a><br>
+            <a href="#" id="btnStyle" class="ui-btn ui-corner-al"> Trivia </a><br>
+            <a href="#" id="btnStyle" class="ui-btn ui-corner-al"> Spot the Difference </a>
+        </div>
+
+    </body>
+
+
+</html>

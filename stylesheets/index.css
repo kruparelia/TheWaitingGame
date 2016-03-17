@@ -1,0 +1,58 @@
+<style type="text/css">
+            a{
+                color:#FF0000;
+                text-decoration:none;
+            }
+            a:hover{
+                text-decoration:underline;
+            }
+            body{
+                height:100%;
+                width:100%;
+                margin:10px;
+                padding-left:0px;
+                text-align:left;
+            }
+            #puzzle_container{
+                line-height:500px;
+                text-align:center;
+                vertical-align:center;
+                border:10px outset #CCCCCC;
+                position:relative;
+                color: #FFFFFF;
+                background-color: #707070;
+
+                width: 200px;
+                height: 200px;
+            }
+
+            #puzzle_container .square{
+                overflow:hidden;
+                border-left:1px solid #FFF;
+                border-top:1px solid #FFF;
+                position:absolute;
+            }
+            #timeSize{
+                font-size: 38px;}
+
+            .activeImageIndicator{
+                border:1px solid #FF0000;
+                position:absolute;
+                z-index:10000;
+            }
+            .revealedImage{
+                position:absolute;
+                left:0px;
+                opacity:0;
+                filter:alpha(opacity=50);
+                top:0px;
+                z-index:50000;
+            }
+
+            .ui-page {
+                background-color: white;
+            }
+            .ui-content{
+                background-color: white;
+            }
+ </style>
