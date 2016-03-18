@@ -11,7 +11,6 @@ var getRef = function(){
                 } else {
                     console.log("Client unauthenticated.")
                 }
-                $scope.$apply();
             });
         }
         return $scope.ref;
