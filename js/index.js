@@ -34,5 +34,16 @@ $scope.login =function() {
         $scope.auth = null;
         getRef().unauth();
     }
+    $scope.loginFb =function() {
+        var provider = 'facebook';
+        var scope = {scope:'email'};
+        var auth = $firebaseAuth(getRef());
+        auth.$authWithOAuthPopup(provider, scope, function(error, authData){
+            if (error) {
+                // an error occurred while attempting login
+                alert("error: " + error);
+            }
+        });
+    };
 
 });

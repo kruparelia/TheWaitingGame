@@ -4,9 +4,10 @@ body {
 }
 
 #mainButton{
-    position: relative;
-    top: 15em;
-    margin: 0 auto;
+    width: 100% ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 55%;
 
 }
 

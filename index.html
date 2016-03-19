@@ -28,8 +28,7 @@
 
             #mainMenuDiv{
                 position: relative;
-                top: -4em;
-                margin: 0 auto;
+                margin: 7%;
         </style>
     </head>
 
@@ -37,7 +36,7 @@
         <div id="mainButton" ng-app = "myApp" ng-controller ="myCtrl" >
             <form ng-hide="auth != null">
                 <button id="logBtn" ng-hide="google!=null" type ="submit" ng-click="login()" class="button button-block button-rounded button-royal button-large"> Google Sign-in</button> <br>
-                <a href="#"  class="button button-block button-rounded button-royal button-large"> Facebook Sign-in </a><br>
+                <button id="logBtn" ng-hide="facebook!=null" type ="submit" ng-click="loginFb()" class="button button-block button-rounded button-royal button-large"> Facebook Sign-in </button><br>
             </form>
             <form ng-hide="auth == null" id="mainMenuDiv">
                 <a href="#"  class="button button-block button-rounded button-royal button-large"> My Account </a><br>
