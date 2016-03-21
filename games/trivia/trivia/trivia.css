@@ -1,12 +1,11 @@
 #trivia {
- position:relative;
- width:35em;
- min-height:22em;
- margin:1em auto;
- background:#bcdeef;
- border:1px solid blue;
- padding:.1em;
- font-family:"Calibri",sans-serif;
+ width: 100%;
+    min-height: 22em;
+    margin: 1em auto;
+    background: #bcdeef;
+    border: 1px solid blue;
+    padding: .1em;
+    font-family: "Calibri",sans-serif;
 }
 #trivia #tcateg {
  margin:0 28% .2em 1em;
@@ -15,7 +14,7 @@
 #trivia #quiz {
  position:relative;
  min-height:21em;
- margin:0 26% 0 0;
+/* margin:100%;*/
  background:#fbfbfd;
  -moz-border-radius:.8em;
  -webkit-border-radius:.8em;
@@ -100,10 +99,10 @@
 }
 
 #trivia #answered {
- position:absolute;
+
  top:.3em;
  right:.1em;
- width:25%;
+ width:100%;
  height:4em;
  background:#eeefef;
  -moz-border-radius:.5em;
@@ -131,10 +130,9 @@
  font-size:1.1em;
 }
 #trivia #qdata {
- position:absolute;
  top:7em;
  right:.1em;
- width:25%;
+ width:100%%;
  background:#fefeed;
 }
 #trivia #qdata h4 {
