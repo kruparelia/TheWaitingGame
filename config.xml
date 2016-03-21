@@ -2,9 +2,9 @@
 <widget version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>The Waiting Game</name>
     <description>
-        A mobile app
+        A mobile app used at restaurants
     </description>
-    <author email="rhildred@gmail.com" href="https://rhildred.github.io">
+    <author email="kruparelia8416@conestogac.on.ca" href="https://www.github.com/kruparelia">
         Apache Cordova Team
     </author>
     <content src="index.html" />
