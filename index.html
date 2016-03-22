@@ -1,48 +1,50 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--        <link rel="stylesheet" href="stylesheets/index.css"/>-->
-        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css" />
+        <link rel="stylesheet" href="stylesheets/buttons.css"/>
+        <link rel="stylesheet" href="stylesheets/index.css"/>
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.firebaseio.com wss://*.firebaseio.com http://*.openstreetmap.org https://auth.firebase.com https://accounts.google.com  https://rippleapi.herokuapp.com data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
+        <!-- Cordova.js ... brings in plugin dependencies -->
         <script src="cordova.js"></script>
+        <!-- AngularJS -->
+        <script src="js/angular.min.js"></script>
+
+        <!-- Firebase -->
+        <script src="js/firebase-debug.js"></script>
+
+        <!-- AngularFire -->
+        <script src="js/angularfire.min.js"></script>
+        <script src="js/index.js"></script>
+        <style>
+            .ng-hide{
+                display:none;
+            }
+
+            #logBtn{
+                display: block;
+                width: 100%;
+            }
+
+            #mainMenuDiv{
+                position: relative;
+                margin: 7%;
+        </style>
     </head>
-    <style type="text/css">
-        body {
-            background: url(images/glow_background.jpg);
-            background-repeat:repeat-y;
-            background-position:center center;
-            background-attachment:scroll;
-            background-size:100% 100%;
-        }
-        .ui-page {
-            background: transparent;
-        }
-        .ui-content{
-            background: transparent;
-        }
-
-        #mainButton{
-            position: relative;
-            top: 12em;
-            margin: 0 auto;
-            padding: 20px
-        }
-        #btnStyle{
-            background-color: purple;
-            color: white;
-            font-family: sans-serif;
-            font-weight: 100;
-        }
-    </style>
-
 
     <body>
-        <div id="mainButton" data-role="controlgroup" data-type="vertical">
-            <a href="mainMenu.html" id="btnStyle" class="ui-btn ui-corner-al"> Google Sign-in </a><br>
-            <a href="mainMenu.html" id="btnStyle" class="ui-btn ui-corner-al"> Facebook Sign-in </a><br>
-            <a href="mainMenu.html" id="btnStyle" class="ui-btn ui-corner-al"> Exit </a>
+        <div id="mainButton" ng-app = "myApp" ng-controller ="myCtrl" >
+            <form ng-hide="auth != null">
+                <button id="logBtn" ng-hide="google!=null" type ="submit" ng-click="login()" class="button button-block button-rounded button-royal button-large"> Google Sign-in</button> <br>
+                <button id="logBtn" ng-hide="facebook!=null" type ="submit" ng-click="loginFb()" class="button button-block button-rounded button-royal button-large"> Facebook Sign-in </button><br>
+            </form>
+            <form ng-hide="auth == null" id="mainMenuDiv">
+                <a href="#"  class="button button-block button-rounded button-royal button-large"> My Account </a><br>
+                <a href="games.html"  class="button button-block button-rounded button-royal button-large"> Games </a><br>
+                <a href="#"  class="button button-block button-rounded button-royal button-large"> Food Menu </a><br>
+                <a href="#"  class="button button-block button-rounded button-royal button-large"> Settings </a> <br>
+                <button id="logBtn" ng-click="logout()" class="button button-block button-rounded button-royal button-large"> Logout</button>
+            </form>
         </div>
     </body>
 
