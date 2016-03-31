@@ -1,5 +1,6 @@
 var app = angular.module("myApp",["firebase"]);
-app.controller("myCtrl", function($scope,  $firebaseAuth) {
+app.controller("myCtrl", function($scope,  $firebaseAuth, $firebaseArray) {
+    $scope.providerName = null;
 var getRef = function(){
         if($scope.ref == null){
             $scope.ref = new Firebase("https://amber-inferno-359.firebaseio.com/");
@@ -7,6 +8,7 @@ var getRef = function(){
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
                     $scope.auth = authData;
+                    $scope.points = $firebaseArray($scope.ref);
                     $scope.$apply();
                 } else {
                     console.log("Client unauthenticated.")
@@ -20,6 +22,7 @@ $scope.ref = null;
 getRef();
 
 $scope.login =function() {
+    $scope.providerName = 'google';
         var provider = 'google';
         var scope = {scope:'email'};
         var auth = $firebaseAuth(getRef());
@@ -35,6 +38,7 @@ $scope.login =function() {
         getRef().unauth();
     }
     $scope.loginFb =function() {
+        $scope.providerName = 'facebook';
         var provider = 'facebook';
         var scope = {scope:'email'};
         var auth = $firebaseAuth(getRef());
@@ -44,6 +48,15 @@ $scope.login =function() {
                 alert("error: " + error);
             }
         });
+    };
+
+    $scope.addPoints = function() {
+        $scope.points.$add({
+            text: $scope.newMessageText,
+            sender: $scope.auth.$scope.providerName.displayName,
+            uid:$scope.auth.uid
+        });
+        $scope.newMessageText = "";
     };
 
 });
