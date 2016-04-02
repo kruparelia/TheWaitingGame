@@ -9,8 +9,7 @@ var getRef = function(){
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
                     $scope.auth = authData;
-                   // $scope.points = $firebaseArray($scope.ref);
-                   // $scope.$apply();
+                    $scope.$apply();
                 } else {
                     console.log("Client unauthenticated.")
                 }
