@@ -1,15 +1,16 @@
 var app = angular.module("myApp",["firebase"]);
 app.controller("myCtrl", function($scope,  $firebaseAuth, $firebaseArray) {
+   //$scope.point;
     $scope.providerName = null;
 var getRef = function(){
         if($scope.ref == null){
-            $scope.ref = new Firebase("https://amber-inferno-359.firebaseio.com/");
+            $scope.ref = new Firebase("https://amber-inferno-2604.firebaseio.com/points");
             $scope.ref.onAuth(function(authData) {
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
                     $scope.auth = authData;
-                    $scope.points = $firebaseArray($scope.ref);
-                    $scope.$apply();
+                   // $scope.points = $firebaseArray($scope.ref);
+                   // $scope.$apply();
                 } else {
                     console.log("Client unauthenticated.")
                 }
@@ -51,12 +52,15 @@ $scope.login =function() {
     };
 
     $scope.addPoints = function() {
-        $scope.points.$add({
-            text: $scope.newMessageText,
-            sender: $scope.auth.$scope.providerName.displayName,
-            uid:$scope.auth.uid
-        });
-        $scope.newMessageText = "";
+        $scope.point = document.getElementById('nca').innerHTML;
+           console.log($scope.point);
+          var user = $scope.auth.uid;
+           var usersRef = $scope.ref.child(user);
+           usersRef.set({
+           user: $scope.auth.google.displayName,
+           point:  $scope.point
+           });
+
     };
 
 });

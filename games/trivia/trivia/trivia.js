@@ -281,7 +281,8 @@ function Trivia() {
   var answered = function() {
     if(document.getElementById('ntotalq')) document.getElementById('ntotalq').innerHTML = nquizzes;
     if(document.getElementById('nqansw')) document.getElementById('nqansw').innerHTML = nqansw;
-    if(document.getElementById('nca')) document.getElementById('nca').innerHTML = nca;
+    if(document.getElementById('nca'))
+    document.getElementById('nca').innerHTML = nca;
     if(document.getElementById('nia')) document.getElementById('nia').innerHTML = nia;
   }
 
