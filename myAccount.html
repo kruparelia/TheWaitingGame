@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheets/index.css"/>
+        <link rel="stylesheet" href="stylesheets/buttons.css"/>
+        <link rel="stylesheet" href="stylesheets/checkbox.css"/>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="cordova.js"></script>
+        <style type="text/css">
+           input[type=checkbox]{
+               transform: scale(1.5)
+           }
+	    </style>
+    </head>
+
+    <body>
+
+        <form id="redeemForm">
+            <p style="font-size: 50px; font-weight: 200; position: relative;" > Points: </p>
+            <input type="checkbox" name="redeem" value="discount10"> 10% off meal          50 points<br>
+            <input type="checkbox" name="redeem" value="discountDrink"> Free Drink         100 points<br>
+            <input type="checkbox" name="redeem" value="discountApp"> Free Appetizer       200 points<br>
+        </form>
+
+        <form id="mainMenuDiv">
+            <a href="#"  class="button button-block button-rounded button-royal button-large"> Redeem Points </a><br>
+        </form>
+
+    </body>
+</html>
