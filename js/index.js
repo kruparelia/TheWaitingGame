@@ -9,8 +9,8 @@ var getRef = function(){
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
                     $scope.auth = authData;
-                   // $scope.points = $firebaseArray($scope.ref);
-                   // $scope.$apply();
+                    $scope.points = $firebaseArray($scope.ref);
+                    $scope.$apply();
                 } else {
                     console.log("Client unauthenticated.")
                 }
@@ -52,15 +52,29 @@ $scope.login =function() {
     };
 
     $scope.addPoints = function() {
-        $scope.point = document.getElementById('nca').innerHTML;
-           console.log($scope.point);
-          var user = $scope.auth.uid;
+
+        var user = $scope.auth.uid;
+
+        $scope.score = parseInt(document.getElementById('nca').innerHTML);
+           console.log($scope.score);
+        //update record
+        var item = $scope.points.$getRecord(user);
+        if(item != null)
+        {
+        var pts = parseInt(item.point) + $scope.score;
+        item.point = pts;
+        $scope.points.$save(item).then(function() {
+      // data has been saved to our database
+           });
+        }
+        else
+        {
            var usersRef = $scope.ref.child(user);
            usersRef.set({
            user: $scope.auth.google.displayName,
-           point:  $scope.point
+           point:  $scope.score
            });
-
+        }
     };
 
 });
