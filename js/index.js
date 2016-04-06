@@ -4,7 +4,7 @@ app.controller("myCtrl", function($scope,  $firebaseAuth, $firebaseArray) {
     $scope.providerName = null;
 var getRef = function(){
         if($scope.ref == null){
-            $scope.ref = new Firebase("https://amber-inferno-2604.firebaseio.com/points");
+            $scope.ref = new Firebase("https://amber-inferno-359.firebaseio.com//points");
             $scope.ref.onAuth(function(authData) {
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
