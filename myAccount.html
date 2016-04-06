@@ -1,0 +1,41 @@
+<html>
+    <head>
+          <!-- AngularJS -->
+    <script src="../../js/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="../../js/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="../../js/angularfire.min.js"></script>
+
+    <script src="../../js/index.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="stylesheets/index.css"/>
+        <link rel="stylesheet" href="stylesheets/buttons.css"/>
+        <link rel="stylesheet" href="stylesheets/checkbox.css"/>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="cordova.js"></script>
+        <style type="text/css">
+           input[type=checkbox]{
+               transform: scale(1.5)
+           }
+	    </style>
+    </head>
+
+    <body>
+ <div ng-app="myApp" ng-controller="myCtrl" data-ng-init="displayPoints()">
+        <form id="redeemForm">
+            <p style="font-size: 50px; font-weight: 200; position: relative;" > Points: <span id="displayPoint" font-color="blue"></span></p>
+            <input type="checkbox" id="discount10" name="redeem" value="discount10"> 10% off meal 50 points<br>
+            <input type="checkbox" id="discountDrink" name="redeem" value="discountDrink"> Free Drink         100 points<br>
+            <input type="checkbox" id="discountApp" name="redeem" value="discountApp"> Free Appetizer       200 points<br>
+        </form>
+
+        <form id="mainMenuDiv">
+            <a href="#" ng-click="redeemPoints()" class="button button-block button-rounded button-royal button-large"> Redeem Points </a><br>
+        </form>
+     <font size="6"> <span id="msg" style="margin-left: 10cm;color:red;" hidden = "hidden"></span></font>
+</div>
+    </body>
+</html>
