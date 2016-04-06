@@ -8,7 +8,7 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="phonegap-version" value="cli-5.2.0" />
     <plugin name="org.apache.cordova.inappbrowser" />
     <allow-navigation href="https://*/*" />
     <access origin="*" />
