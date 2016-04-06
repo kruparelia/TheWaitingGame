@@ -2,7 +2,7 @@ game.GameOverScreen = me.ScreenObject.extend({
     init: function() {
         this.savedData = null;
         this.handler = null;
-       // document.getElementById('nca').innerHTML = game.data.score;
+        document.getElementById('nca').innerHTML = this.score;
     },
 
     onResetEvent: function() {
@@ -51,8 +51,6 @@ game.GameOverScreen = me.ScreenObject.extend({
                                     me.video.renderer.getHeight() - 96);
         me.game.world.addChild(this.ground1, 11);
         me.game.world.addChild(this.ground2, 11);
-
-
 
         // add the dialog witht he game information
         if (game.data.newHiScore) {
