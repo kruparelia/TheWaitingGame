@@ -97,7 +97,7 @@
             var activeImageIndicator = false;
             var activeSquare = false; 	// Reference to active puzzle square
             var squareArray = new Array(); // Array with references to all the squares
-
+            var nca = 0;
 
             var emptySquare_x;
             var emptySquare_y;
@@ -118,6 +118,9 @@
 
             function initPuzzle()
             {
+              document.getElementById("nca").innerHTML = 0;
+                document.getElementById("sbtn").disabled = false;
+                document.getElementById("pointsMsg").style.visibility = "hidden";
                 gameInProgress = false;
                 var tmpInUse = imageInUse;
                 imageInUse = imageArray[Math.floor(Math.random() * puzzleImages.length)];
@@ -406,7 +409,6 @@
             var x = new clsStopwatch();
             var $time;
             var clocktimer;
-            var nca = 0;
 
             function pad(num, size) {
                 var s = "0000" + num;
@@ -464,6 +466,7 @@
                 if(gameDone){
                     nca = 10;
                     document.getElementById('nca').innerHTML = nca;
+                    document.getElementById("pointsMsg").style.visibility = "visible";
                 }
             }
 
@@ -485,7 +488,7 @@
 <p><i>Shuffle, then click to move the pieces</i></p></br>
 
 <div id="bestTimeMessage"></div>
-<div>You got <span id="nca"></span> points for completing the game<br/></div>
+<div id="pointsMsg" style="visibility:hidden">You got <span id="nca"></span> points for completing the game<br/></div>
 <button id="sbtn" ng-click="addPoints()" style="visibility: visible;float:right;margin-right: 2cm;background-color: #4CAF50;">Submit Score</button>
 </div>
 </div>

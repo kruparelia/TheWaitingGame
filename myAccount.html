@@ -24,9 +24,9 @@
     </head>
 
     <body>
- <div ng-app="myApp" ng-controller="myCtrl">
+ <div ng-app="myApp" ng-controller="myCtrl" data-ng-init="displayPoints()">
         <form id="redeemForm">
-            <p style="font-size: 50px; font-weight: 200; position: relative;" > Points: </p>
+            <p style="font-size: 50px; font-weight: 200; position: relative;" > Points: <span id="displayPoint" font-color="blue"></span></p>
             <input type="checkbox" id="discount10" name="redeem" value="discount10"> 10% off meal 50 points<br>
             <input type="checkbox" id="discountDrink" name="redeem" value="discountDrink"> Free Drink         100 points<br>
             <input type="checkbox" id="discountApp" name="redeem" value="discountApp"> Free Appetizer       200 points<br>

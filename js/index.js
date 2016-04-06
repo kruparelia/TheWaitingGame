@@ -82,39 +82,51 @@ $scope.login =function() {
     $scope.redeemPoints = function(){
         var user = $scope.auth.uid;
         var item = $scope.points.$getRecord(user);
-        if(parseInt(item.point) > 50)
+        if( document.getElementById("discount10").checked || document.getElementById("discountDrink").checked || document.getElementById("discountApp").checked)
         {
-            if(document.getElementById("discount10").checked)
+            if(parseInt(item.point) > 50)
             {
-              var pts = parseInt(item.point) - 50;
+                if(document.getElementById("discount10").checked)
+                {
+                  var pts = parseInt(item.point) - 50;
+                    document.getElementById("discount10").checked = false;
+                }
+                else if (document.getElementById("discountDrink").checked)
+                {
+                      var pts = parseInt(item.point) - 100;
+                    document.getElementById("discountDrink").checked = false;
+                }
+                else if(document.getElementById("discountApp").checked)
+                {
+                      var pts = parseInt(item.point) - 100;
+                    document.getElementById("discountApp").checked = false;
+                }
+                $("#msg").show();
+                document.getElementById("msg").innerHTML = "Points redeemed from account";
+                document.getElementById("displayPoint").innerHTML = pts;
+            }
+            else
+            {
+                    $("#msg").show();
+                    document.getElementById("msg").innerHTML = "Not enough money";
                 document.getElementById("discount10").checked = false;
-            }
-            else if (document.getElementById("discountDrink").checked)
-            {
-                  var pts = parseInt(item.point) - 100;
                 document.getElementById("discountDrink").checked = false;
-            }
-            else if(document.getElementById("discountApp").checked)
-            {
-                  var pts = parseInt(item.point) - 100;
                 document.getElementById("discountApp").checked = false;
             }
-            $("#msg").show();
-            document.getElementById("msg").innerHTML = "Points redeemed from account";
+            if(pts > 0)
+            {
+                item.point = pts;
+                $scope.points.$save(item).then(function() {
+              // data has been saved to our database
+                   });
+            }
+        }
+    };
 
-        }
-        else
-        {
-                $("#msg").show();
-                document.getElementById("msg").innerHTML = "Not enough money";
-            document.getElementById("discount10").checked = false;
-            document.getElementById("discountDrink").checked = false;
-            document.getElementById("discountApp").checked = false;
-        }
-        item.point = pts;
-        $scope.points.$save(item).then(function() {
-      // data has been saved to our database
-           });
+    $scope.displayPoints = function(){
+          var user = $scope.auth.uid;
+        var item = $scope.points.$getRecord(user);
+        document.getElementById("displayPoint").innerHTML = item.point;
     };
 
 });

@@ -247,7 +247,10 @@ function Trivia() {
 
     // removes 'disabled' from Reset (when start), or adds 'disabled' to Reset (when Reset)
     if(de == 'disable') document.getElementById('treset').removeAttribute('disabled');
-    else document.getElementById('treset').setAttribute('disabled', 'disabled');
+    else {
+        document.getElementById('treset').setAttribute('disabled', 'disabled');
+        document.getElementById("sbtn").disabled = false;
+    }
   }
 
   // sets and returns the variant of answers (for Level 1)

@@ -15,10 +15,12 @@
     <link href="trivia/trivia.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="trivia/trivia.js"></script>
     <script>
+        function btnDisplay(){
     document.getElementById("sbtn").disabled = false;
+        }
     </script>
 </head>
-<body>
+<body onload="btnDisplay();">
  <div ng-app="myApp" ng-controller="myCtrl">
 <div id="trivia">
  <div id="tcateg">Trivia Category:</div>
