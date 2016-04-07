@@ -103,7 +103,7 @@ $scope.login =function() {
                 }
                 $("#msg").show();
                 document.getElementById("msg").innerHTML = "Points redeemed from account";
-                document.getElementById("displayPoint").innerHTML = pts;
+                document.getElementById("displayPoint").innerHTML = "Points are " + pts;
             }
             else
             {
@@ -126,7 +126,7 @@ $scope.login =function() {
     $scope.displayPoints = function(){
           var user = $scope.auth.uid;
         var item = $scope.points.$getRecord(user);
-        document.getElementById("displayPoint").innerHTML = item.point;
+        document.getElementById("displayPoint").innerHTML = "Points are " + item.point;
     };
 
 });
