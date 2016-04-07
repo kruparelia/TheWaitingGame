@@ -26,7 +26,7 @@
     <body>
  <div ng-app="myApp" ng-controller="myCtrl">
         <form id="redeemForm">
-           <button style="background-color:cyan;" ng-click="displayPoints()"> <p style="font-size: 15px; color: red; font-weight: 200; position: relative;" >Check Points</button><span id="displayPoint" style="margin-left:5cm" font-color="blue"></span></p>
+            <p style="font-size: 15px; color: red; font-weight: 200; position: relative;" ><span id="displayPoint" style="margin-left:5cm" font-color="blue"></span></p>
             <input type="checkbox" id="discount10" name="redeem" value="discount10"> 10% off meal 50 points<br>
             <input type="checkbox" id="discountDrink" name="redeem" value="discountDrink"> Free Drink         100 points<br>
             <input type="checkbox" id="discountApp" name="redeem" value="discountApp"> Free Appetizer       200 points<br>
@@ -34,6 +34,7 @@
 
         <form id="mainMenuDiv">
             <a href="#" ng-click="redeemPoints()" class="button button-block button-rounded button-royal button-large"> Redeem Points </a><br>
+            <a href="#" ng-click="displayPoints()" class="button button-block button-rounded button-royal button-large"> Check Points </a><br>
         </form>
      <font size="6"> <span id="msg" style="margin-left: 10cm;color:red;" hidden = "hidden"></span></font>
 </div>
