@@ -126,7 +126,7 @@ $scope.login =function() {
     $scope.displayPoints = function(){
           var user = $scope.auth.uid;
         var item = $scope.points.$getRecord(user);
-        document.getElementById("displayPoint").innerHTML = "Points are " + item.point;
+        document.getElementById("displayPoint").innerHTML = "Points: "+ item.point;
     };
 
 });
