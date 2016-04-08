@@ -224,7 +224,7 @@
     document.getElementById("mg__button--restart").addEventListener( "click", function(e) {
       self.resetGame();
     });
-
+        document.getElementById("sbtn").disabled = false;
     this._startScreenEvents();
   }
 
@@ -487,6 +487,7 @@
     if (this.options.onGameEnd() === false) {
         nca = 10;
         document.getElementById('nca').innerHTML = nca;
+        document.getElementById("pointsMsg").style.visibility = "visible";
       this._clearGame();
       this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">Sweet!</h2>\
         <p class="mg__onend--message">You won the round in ' + this.numMoves + ' moves. Go you.</p>\
@@ -511,6 +512,8 @@
    */
 
   Memory.prototype.resetGame = function() {
+    document.getElementById("pointsMsg").style.visibility = "hidden";
+    document.getElementById('nca').innerHTML = 0;
     this._clearGame();
     this._setupGame();
   };
