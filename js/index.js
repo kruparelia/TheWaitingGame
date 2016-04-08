@@ -146,6 +146,7 @@ $scope.login =function() {
           var user = $scope.auth.uid;
         var item = $scope.points.$getRecord(user);
         document.getElementById("displayPoint").innerHTML = "Points: "+ item.point;
+        $("#msg").hide();
     };
 
 });
