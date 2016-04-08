@@ -4,7 +4,7 @@ app.controller("myCtrl", function($scope,  $firebaseAuth, $firebaseArray) {
     $scope.providerName = null;
 var getRef = function(){
         if($scope.ref == null){
-            $scope.ref = new Firebase("https://amber-inferno-359.firebaseio.com/points");
+            $scope.ref = new Firebase("https://amber-inferno-2604.firebaseio.com/points");
             $scope.ref.onAuth(function(authData) {
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
@@ -24,7 +24,7 @@ $scope.ref = null;
 getRef();
 
 $scope.login =function() {
-    $scope.providerName = 'google';
+
         var provider = 'google';
         var scope = {scope:'email'};
         var auth = $firebaseAuth(getRef());
@@ -40,7 +40,7 @@ $scope.login =function() {
         getRef().unauth();
     }
     $scope.loginFb =function() {
-        $scope.providerName = 'facebook';
+
         var provider = 'facebook';
         var scope = {scope:'email'};
         var auth = $firebaseAuth(getRef());
@@ -71,10 +71,22 @@ $scope.login =function() {
         else
         {
            var usersRef = $scope.ref.child(user);
-           usersRef.set({
-           user: $scope.auth.google.displayName,
-           point:  $scope.score
-           });
+           var index = user.indexOf(":");
+           $scope.providerName = user.substring(0,index);
+            if($scope.providerName == "google")
+            {
+               usersRef.set({
+               user: $scope.auth.google.displayName,
+               point:  $scope.score
+               });
+            }
+            else
+            {
+                usersRef.set({
+               user: $scope.auth.facebook.displayName,
+               point:  $scope.score
+               });
+            }
         }
         document.getElementById("sbtn").disabled = true;
     };
