@@ -108,12 +108,12 @@ $scope.login =function() {
                     document.getElementById("coupon").innerHTML = '<img src="coupons/img/FREE_APP.jpg" width="100%" >';
                     document.getElementById("discountApp").checked = false;
                 }
-                $("#msg").show();
-                document.getElementById("msg").innerHTML = "Points redeemed from account";
+                //$("#msg").show();
+                //document.getElementById("msg").innerHTML = "Points redeemed from account";
                 document.getElementById("displayPoint").innerHTML = "Points are " + pts;
             }
             else
-            {
+            {       $("#coupon").hide();
                     $("#msg").show();
                     document.getElementById("msg").innerHTML = "Not enough money";
                 document.getElementById("discount10").checked = false;
