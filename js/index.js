@@ -96,7 +96,7 @@ $scope.login =function() {
         var item = $scope.points.$getRecord(user);
         if( document.getElementById("discount10").checked || document.getElementById("discountDrink").checked || document.getElementById("discountApp").checked)
         {
-            if(parseInt(item.point) > 50)
+            if(parseInt(item.point) >= 50)
             {
                 if(document.getElementById("discount10").checked)
                 {
