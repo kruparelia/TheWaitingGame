@@ -88,17 +88,24 @@ $scope.login =function() {
             {
                 if(document.getElementById("discount10").checked)
                 {
-                  var pts = parseInt(item.point) - 50;
+                    var pts = parseInt(item.point) - 50;
+                    $("#coupon").show();
+                    document.getElementById("coupon").innerHTML = '<img src="coupons/img/ENTREE.jpg" width="100%" >';
                     document.getElementById("discount10").checked = false;
                 }
                 else if (document.getElementById("discountDrink").checked)
                 {
-                      var pts = parseInt(item.point) - 100;
+
+                    var pts = parseInt(item.point) - 100;
+                    $("#coupon").show();
+                    document.getElementById("coupon").innerHTML = '<img src="coupons/img/FREE_DRINK.jpg" width="100%" >';
                     document.getElementById("discountDrink").checked = false;
                 }
                 else if(document.getElementById("discountApp").checked)
                 {
-                      var pts = parseInt(item.point) - 100;
+                    var pts = parseInt(item.point) - 200;
+                    $("#coupon").show();
+                    document.getElementById("coupon").innerHTML = '<img src="coupons/img/FREE_APP.jpg" width="100%" >';
                     document.getElementById("discountApp").checked = false;
                 }
                 $("#msg").show();

@@ -1,13 +1,13 @@
 <html>
     <head>
           <!-- AngularJS -->
-    <script src="../../js/angular.min.js"></script>
+    <script src="../js/angular.min.js"></script>
     <!-- Firebase -->
-    <script src="../../js/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
     <!-- AngularFire -->
-    <script src="../../js/angularfire.min.js"></script>
+    <script src="../js/angularfire.min.js"></script>
 
-    <script src="../../js/index.js"></script>
+    <script src="../js/index.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="stylesheets/index.css"/>
@@ -19,7 +19,16 @@
         <style type="text/css">
            input[type=checkbox]{
                transform: scale(1.5)
-           }
+           };
+
+            #coupon{
+                width:100%;
+            };
+
+            img{
+                width:100%;
+            };
+
 	    </style>
     </head>
 
@@ -36,7 +45,9 @@
             <a href="#" ng-click="redeemPoints()" class="button button-block button-rounded button-royal button-large"> Redeem Points </a><br>
             <a href="#" ng-click="displayPoints()" class="button button-block button-rounded button-royal button-large"> Check Points </a><br>
         </form>
-     <font size="6"> <span id="msg" style="margin-left: 10cm;color:red;" hidden = "hidden"></span></font>
+     <div id="coupon" hidden="hidden">
+         <font size="10"> <span id="msg" style="margin-left: 10cm;color:red;" hidden = "hidden"></span></font>
+     </div>
 </div>
     </body>
 </html>
