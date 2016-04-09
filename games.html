@@ -8,19 +8,23 @@
         <script src="cordova.js"></script>
         <script type="text/javascript">
             var userip;
-            var clientip = "142.156.1.223";
+            var clientip = ["142.156.1.223", "99.235.195.53", "198.84.192.184", "174.93.85.220"];
         </script>
         <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
         <script>
             $(document).ready(function(){
-                if(clientip == userip.toString() || userip.toString() == "99.235.195.53" || userip.toString() == "198.84.192.184" || userip.toString() == "174.93.85.220"){
-                    console.log("Your IP is :", userip);
-                    $("#showButtons").show();
-                }
-                else{
-                    console.log("Wrong ip address");
-                    $("#showButtons").hide();
-                    alert("You are not connected to the correct IP Address");
+                for(var i = 0; clientip.length; i++){
+                    if(clientip[i] == userip.toString(); ){
+                        console.log("Your IP is :", userip);
+                        $("#showButtons").show();
+                    }
+                    else{
+                        console.log("Wrong ip address");
+                        console.log(userip);
+                        $("#showButtons").hide();
+                        alert("You are not connected to the correct IP Address");
+                        break;
+                    };
                 };
             });
         </script>
