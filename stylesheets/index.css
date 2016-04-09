@@ -36,8 +36,8 @@ animation: AnimationName 8s ease infinite;
 #redeemForm{
     margin-left: auto ;
     margin-right: auto ;
-    margin-top: 55%;
-    font-size: 30px;
+    margin-top: 25%;
+    font-size: 40px;
 
 }
 
@@ -94,9 +94,8 @@ text-shadow:#e0e0e0 1px 1px 0;
 
 
 h4{
-color:#fff;
-
-text-shadow:#7a7a7a 2px 2px 0;
+    color:#fff;
+    text-shadow:#7a7a7a 2px 2px 0;
     font-size: 20px;
     text-align: center;
 }
@@ -113,8 +112,8 @@ img{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-
 }
+
 .lbl{
 	font-family: 'Myriad Pro', Verdana, Arial, Helvetica, sans-serif;
     font-size: 25px;
@@ -122,7 +121,7 @@ img{
     letter-spacing: 2px;
     text-align: left;
     line-height: 15px;
-    text-shadow: 1px 1px 0 #CCC, 2px 2px 0 #CCC, 3px 3px 0 #444, 4px 4px 0 #444, 5px 5px 0 #444, 6px 6px 0 #444;
+    text-shadow: 1px 1px 0 #CCC, 2px 2px 0 #CCC, 3px 3px 0 #444;
     -webkit-transition: all 0.12s ease-out;
 }
 .lbl{
@@ -139,3 +138,8 @@ input{
     padding:0;
     margin-right: 15px;
 }
+
+/*------- game css ----*/
+
+
+
