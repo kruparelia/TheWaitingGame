@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,17 +34,29 @@
     </head>
 
     <body>
+        <embed src="audio/theme.mp3" autostart="true" loop="true" width="2" height="0"></embed>
+        <img src="images/logo.png" alt="The Waiting Game">
         <div id="mainButton" ng-app = "myApp" ng-controller ="myCtrl" >
             <form ng-hide="auth != null">
-                <button id="logBtn" ng-hide="google!=null" type ="submit" ng-click="login()" class="button button-block button-rounded button-royal button-large"> Google Sign-in</button> <br>
-                <button id="logBtn" ng-hide="facebook!=null" type ="submit" ng-click="loginFb()" class="button button-block button-rounded button-royal button-large"> Facebook Sign-in </button><br>
+                <button id="logBtn" ng-hide="google!=null" type ="submit" ng-click="login()" class="myButton">
+                    Google Sign-in</button> <br>
+                <button id="logBtn" ng-hide="facebook!=null" type ="submit" ng-click="loginFb()" class="myButton">
+                    Facebook Sign-in </button><br>
             </form>
             <form ng-hide="auth == null" id="mainMenuDiv">
+<<<<<<< HEAD
                 <a href="myAccount.html"  class="button button-block button-rounded button-royal button-large"> My Account </a><br>
                 <a href="games.html"  class="button button-block button-rounded button-royal button-large"> Games </a><br>
                 <a href="foodMenu.html"  class="button button-block button-rounded button-royal button-large"> Food Menu </a><br>
                 <a href="HelpPage.html"  class="button button-block button-rounded button-royal button-large"> Help</a> <br>
                 <button id="logBtn" ng-click="logout()" class="button button-block button-rounded button-royal button-large"> Logout</button>
+=======
+                <a href="myAccount.html"  class="myButton"> My Account </a><br>
+                <a href="games.html"  class="myButton"> Games </a><br>
+                <a href="foodMenu.html"  class="myButton"> Food Menu </a><br>
+                <a href="HelpPage.html"  class="myButton"> Help</a> <br>
+                <button id="logBtn" ng-click="logout()" class="myButton"> Logout</button>
+>>>>>>> bb6205daac180f624f3f1dfb3c323dcd0ceb52cf
             </form>
         </div>
     </body>
