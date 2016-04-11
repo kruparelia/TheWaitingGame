@@ -83,7 +83,7 @@ img {
 .wrapper {
   margin: 0 auto;
   width: 100%;
-  min-width: 480px;
+  min-width: 300px;
 }
 
 /* container */
