@@ -487,6 +487,7 @@
         nca = 10;
         document.getElementById('nca').innerHTML = nca;
         document.getElementById("pointsMsg").style.visibility = "visible";
+        document.getElementById("sbtn").style.visibility = "visible";
       this._clearGame();
       this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">Sweet!</h2>\
         <p class="mg__onend--message">You won the round in ' + this.numMoves + ' moves. Go you.</p>\

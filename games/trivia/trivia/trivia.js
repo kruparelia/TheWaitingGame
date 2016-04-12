@@ -235,6 +235,7 @@ function Trivia() {
     document.getElementById('nquiz').value = 1;
     document.getElementById('qctimer').checked = false;
     document.getElementById('quiz').innerHTML = '<h3>Welcome to Trivia Game</h3><strong>Levels:</strong><ul><li>Level 1 - Easy - It is displayed a list of answers to each quiz. Click the correct answer.</li><li>Level 2 - Difficult - It is displayed a text box in which you must write the answer, then click on Send button.</li></ul><strong>Mode</strong><ul><li>Consecutive - The quiestions start from the quiz with index number added into a text field, and are added in their order till the last quiz.</li><li>Random - The quizzes are choosed randomly, till the last quiz, without repeat.</li></ul>&bull; <strong>Countdown Timer</strong> - If that button is checked, you have 15 seconds to answer till the next quiz is added automatically.<br/><br/> - Click the Start button to start the quizzes. The Reset button resets the Trivia.<div id="tfrom">From: <a href="http://coursesweb.net/" title="Web Programming and Development Courses">http://CoursesWeb.net</a></div>';
+      document.getElementById("sbtn").style.visibility = "hidden";
   }
 
   // to disable /enable buttons when Start /Reset Trivia, receives an Array with IDs of buttons, and 'disable' or 'enable'
@@ -318,6 +319,7 @@ function Trivia() {
       seeansw += ((qmode == 'qindex' && nquiz == (nquizzes - 1)) || (qmode == 'qrandom' && iquizzes.length == 1)) ? '<h4> - <em>That was the last quiz</em>.</h4>' : '<button id="nextq" onclick="obTrivia.sQuiz(\'next\')">Next</button>';
 
       document.getElementById('qansw').innerHTML = seeansw;
+        document.getElementById("sbtn").style.visibility = "visible";
     }
   }
 
