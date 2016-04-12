@@ -13,13 +13,13 @@
         <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
         <script>
             $(document).ready(function(){
-                for(var i = 0; clientip.length; i++){
-                    if(clientip[i] == userip.toString() ){
+                for(var i = 0; i < clientip.length; i++){
+                    if(clientip[i] === userip.toString() ){
                         console.log("Your IP is :", userip);
                         $("#showButtons").show();
                         break;
                     }
-                    else{
+                    else if (i >= clientip.length -1) {
                         console.log("Wrong ip address");
                         console.log(userip);
                         $("#showButtons").hide();
@@ -29,17 +29,18 @@
                 };
             });
         </script>
+        </script>
 
     </head>
-    <body>
-        <img src="images/logo.png" alt="The Waiting Game">
-        <div id="showButtons" >
-            <div id="mainButton" >
-                <a href="games/imageScramble/imageScramble.html"  class="myButton"> Image Scramble </a><br>
-                <a href="games/trivia/trivia.html"  class="myButton"> Trivia </a><br>
-                <a href="games/Memory-master/memoryGame.html"  class="myButton"> Memory Game </a><br>
-            </div>
+<body>
+    <img src="images/logo.png" alt="The Waiting Game">
+    <div id="showButtons" >
+        <div id="mainButton" >
+            <a href="games/imageScramble/imageScramble.html"  class="myButton"> Image Scramble </a><br>
+            <a href="games/trivia/trivia.html"  class="myButton"> Trivia </a><br>
+            <a href="games/Memory-master/memoryGame.html"  class="myButton"> Memory Game </a><br>
         </div>
-    </body>
+    </div>
+</body>
 
 </html>
