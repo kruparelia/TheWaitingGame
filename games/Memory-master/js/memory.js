@@ -200,7 +200,6 @@
     this.numMoves = 0;
 
     this.gameMetaHTML = '<div class="mg__meta--left">\
-      <span class="mg__meta--level">Level: \
       <span id="mg__meta--level">' + this.chosenLevel + '</span>\
       </span>\
       <span class="mg__meta--moves">Moves: \

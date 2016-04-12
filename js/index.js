@@ -89,6 +89,7 @@ $scope.login =function() {
             }
         }
         document.getElementById("sbtn").disabled = true;
+        alert("You got " + $scope.score + " points");
     };
 
     $scope.redeemPoints = function(){
