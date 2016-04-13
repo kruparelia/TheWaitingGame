@@ -200,7 +200,6 @@
     this.numMoves = 0;
 
     this.gameMetaHTML = '<div class="mg__meta--left">\
-      <span class="mg__meta--level">Level: \
       <span id="mg__meta--level">' + this.chosenLevel + '</span>\
       </span>\
       <span class="mg__meta--moves">Moves: \
@@ -216,7 +215,7 @@
     this.gameStartScreenHTML = '<h2 class="mg__start-screen--heading">Welcome to the Memory Game!</h2>\
       <p class="mg__start-screen--text">Flip the tiles and try to match them up in pairs. Pair up all the tiles to win. Try to complete the game in as few moves as possible!</p>\
       <ul class="mg__start-screen--level-select">\
-      <li><span data-level="1">Start Game</span></li>\
+      <li><span data-level="3">Start Game</span></li>\
       </ul>';
     this.gameStartScreen.innerHTML = this.gameStartScreenHTML;
     this.game.appendChild(this.gameStartScreen);
@@ -224,7 +223,7 @@
     document.getElementById("mg__button--restart").addEventListener( "click", function(e) {
       self.resetGame();
     });
-
+        document.getElementById("sbtn").disabled = false;
     this._startScreenEvents();
   }
 
@@ -487,6 +486,8 @@
     if (this.options.onGameEnd() === false) {
         nca = 10;
         document.getElementById('nca').innerHTML = nca;
+        document.getElementById("pointsMsg").style.visibility = "visible";
+        document.getElementById("sbtn").style.visibility = "visible";
       this._clearGame();
       this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">Sweet!</h2>\
         <p class="mg__onend--message">You won the round in ' + this.numMoves + ' moves. Go you.</p>\
@@ -511,6 +512,8 @@
    */
 
   Memory.prototype.resetGame = function() {
+    document.getElementById("pointsMsg").style.visibility = "hidden";
+    document.getElementById('nca').innerHTML = 0;
     this._clearGame();
     this._setupGame();
   };

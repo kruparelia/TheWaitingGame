@@ -7,6 +7,7 @@
     <author email="kruparelia8416@conestogac.on.ca" href="https://www.github.com/kruparelia">
         Apache Cordova Team
     </author>
+    <icon src="res/icon.png" />
     <content src="index.html" />
     <preference name="phonegap-version" value="3.7.0" />
     <plugin name="org.apache.cordova.inappbrowser" />

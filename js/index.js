@@ -4,7 +4,7 @@ app.controller("myCtrl", function($scope,  $firebaseAuth, $firebaseArray) {
     $scope.providerName = null;
 var getRef = function(){
         if($scope.ref == null){
-            $scope.ref = new Firebase("https://amber-inferno-359.firebaseio.com//points");
+            $scope.ref = new Firebase("https://amber-inferno-2604.firebaseio.com/points");
             $scope.ref.onAuth(function(authData) {
                 if (authData) {
                     console.log("Authenticated with uid:", authData.uid);
@@ -24,7 +24,7 @@ $scope.ref = null;
 getRef();
 
 $scope.login =function() {
-    $scope.providerName = 'google';
+
         var provider = 'google';
         var scope = {scope:'email'};
         var auth = $firebaseAuth(getRef());
@@ -40,7 +40,7 @@ $scope.login =function() {
         getRef().unauth();
     }
     $scope.loginFb =function() {
-        $scope.providerName = 'facebook';
+
         var provider = 'facebook';
         var scope = {scope:'email'};
         var auth = $firebaseAuth(getRef());
@@ -71,12 +71,25 @@ $scope.login =function() {
         else
         {
            var usersRef = $scope.ref.child(user);
-           usersRef.set({
-           user: $scope.auth.google.displayName,
-           point:  $scope.score
-           });
+           var index = user.indexOf(":");
+           $scope.providerName = user.substring(0,index);
+            if($scope.providerName == "google")
+            {
+               usersRef.set({
+               user: $scope.auth.google.displayName,
+               point:  $scope.score
+               });
+            }
+            else
+            {
+                usersRef.set({
+               user: $scope.auth.facebook.displayName,
+               point:  $scope.score
+               });
+            }
         }
         document.getElementById("sbtn").disabled = true;
+        alert("You got " + $scope.score + " points");
     };
 
     $scope.redeemPoints = function(){
@@ -84,29 +97,36 @@ $scope.login =function() {
         var item = $scope.points.$getRecord(user);
         if( document.getElementById("discount10").checked || document.getElementById("discountDrink").checked || document.getElementById("discountApp").checked)
         {
-            if(parseInt(item.point) > 50)
+            if(parseInt(item.point) >= 50)
             {
                 if(document.getElementById("discount10").checked)
                 {
-                  var pts = parseInt(item.point) - 50;
+                    var pts = parseInt(item.point) - 50;
+                    $("#coupon").show();
+                    document.getElementById("coupon").innerHTML = '<img src="coupons/img/ENTREE.jpg" width="100%" >';
                     document.getElementById("discount10").checked = false;
                 }
                 else if (document.getElementById("discountDrink").checked)
                 {
-                      var pts = parseInt(item.point) - 100;
+
+                    var pts = parseInt(item.point) - 100;
+                    $("#coupon").show();
+                    document.getElementById("coupon").innerHTML = '<img src="coupons/img/FREE_DRINK.jpg" width="100%" >';
                     document.getElementById("discountDrink").checked = false;
                 }
                 else if(document.getElementById("discountApp").checked)
                 {
-                      var pts = parseInt(item.point) - 100;
+                    var pts = parseInt(item.point) - 200;
+                    $("#coupon").show();
+                    document.getElementById("coupon").innerHTML = '<img src="coupons/img/FREE_APP.jpg" width="100%" >';
                     document.getElementById("discountApp").checked = false;
                 }
-                $("#msg").show();
-                document.getElementById("msg").innerHTML = "Points redeemed from account";
-                document.getElementById("displayPoint").innerHTML = pts;
+                //$("#msg").show();
+                //document.getElementById("msg").innerHTML = "Points redeemed from account";
+                document.getElementById("displayPoint").innerHTML = "Points are " + pts;
             }
             else
-            {
+            {       $("#coupon").hide();
                     $("#msg").show();
                     document.getElementById("msg").innerHTML = "Not enough money";
                 document.getElementById("discount10").checked = false;
@@ -126,7 +146,8 @@ $scope.login =function() {
     $scope.displayPoints = function(){
           var user = $scope.auth.uid;
         var item = $scope.points.$getRecord(user);
-        document.getElementById("displayPoint").innerHTML = item.point;
+        document.getElementById("displayPoint").innerHTML = "Points: "+ item.point;
+        $("#msg").hide();
     };
 
 });
