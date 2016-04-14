@@ -169,7 +169,7 @@
                     gameDone = true;
                     revealImage();
                     stop();
-                    bestTime();
+                   // bestTime();
                     reset();
                     getPoints();
                 }else{
@@ -397,12 +397,12 @@
                 update();
             }
 
-            var bestTime = function(){
+         /*   var bestTime = function(){
                 if(gameDone){
                     $highScore = formatTime(x.time());
                     document.getElementById('bestTimeMessage').innerHTML = 'Your best time is ' + $highScore;
                 }
-            }
+            }*/
 
             var getPoints = function(){
                 if(gameDone){
