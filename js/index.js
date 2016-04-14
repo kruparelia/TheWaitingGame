@@ -152,15 +152,3 @@ $scope.login =function() {
 
 });
 
-    function onLoad() {
-            window.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    function onDeviceReady(){
-            window.addEventListener("pause", onPause, false);
-    }
-
-    function onPause(){
-        var sound =  window.getElementById("audio");
-        sound.pause();
-    }
